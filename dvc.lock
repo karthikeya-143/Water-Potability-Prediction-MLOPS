@@ -5,8 +5,8 @@ stages:
     deps:
     - path: src/data_collection.py
       hash: md5
-      md5: 4ed895110e58acef2f0eb2d5edbd69b4
-      size: 560
+      md5: 92d53446db81812e663d0b777f6fc1b6
+      size: 2152
     outs:
     - path: data/raw
       hash: md5
