@@ -1,11 +1,14 @@
 import pandas as pd
 import os
+import yaml
 import numpy as np
 from sklearn.model_selection import train_test_split
 
+test_size = yaml.safe_load(open("params.yaml"))["data_collection"]["test_size"]
+
 data=pd.read_csv(r"C:\Users\DELL\Downloads\water_potability.csv")
 
-train_data,test_data=train_test_split(data,test_size=0.2,random_state=42)
+train_data,test_data=train_test_split(data,test_size=test_size,random_state=42)
 
 data_path=os.path.join("data","raw")
 os.makedirs(data_path)
