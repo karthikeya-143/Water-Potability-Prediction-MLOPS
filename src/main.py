@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import pickle
 import pandas as pd
+import uvicorn
 from src.data_model import Water
 
 app = FastAPI(
@@ -36,3 +37,6 @@ def model_predict(data: Water):
         return "The water is potable."
     else:        
         return "The water is not potable."
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
